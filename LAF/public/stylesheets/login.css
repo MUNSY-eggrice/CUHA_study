@@ -1,0 +1,98 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+div {
+  color: white;
+}
+
+#root {
+}
+
+#root .container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/img-landing-background.e1eb8272.webp");
+  background-color: rgb(0, 0, 0);
+  background-size: auto 100%;
+  background-size: cover;
+  background-repeat: repeat;
+  animation: 100s linear 0s infinite normal none running eusulA;
+}
+
+#root .container .auth-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#root .container .auth-wrap .info {
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: -0.125rem;
+  white-space: pre-line;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#root .container .auth-wrap .logo {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+#root .container .auth-wrap .loginBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29.25rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: bold;
+  background: rgb(129, 107, 255);
+}
+
+#root .container .auth-wrap .loginBtn .loginInfo {
+  font-size: 1.125rem;
+}
+
+#root .container .auth-wrap .joinBtn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+@-webkit-keyframes eusulA {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: calc(-100vw + 100%) 0;
+  }
+}
+
+@keyframes eusulA {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: calc(-100vw + 100%) 0;
+  }
+}
+
+data-styled.g485[id="sc-keyframes-eusulA"] {
+  content: "eusulA,";
+}

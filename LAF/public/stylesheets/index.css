@@ -1,0 +1,234 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: -0.025rem;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding-left: 1.5rem;
+}
+
+#root .header {
+  width: 100%;
+  height: 51.375em;
+  background-image: linear-gradient(
+      90deg,
+      rgba(18, 18, 18, 0.5) 0%,
+      rgba(18, 18, 18, 0) 50%
+    ),
+    linear-gradient(rgba(18, 18, 18, 0.5) 0%, rgba(18, 18, 18, 0) 21.11%),
+    linear-gradient(rgba(18, 18, 18, 0) 50%, rgba(18, 18, 18, 0.5) 100%),
+    url("../images/heroaca_W_210531.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 500ms ease;
+}
+
+#root .header .nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3.125rem 0rem 3.125rem;
+}
+
+#root .header .nav div {
+  display: flex;
+  align-items: center;
+}
+
+#root .header .nav li {
+  float: left;
+}
+
+#root .header .nav .nav-left .laftel a {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+#root .header .background-list {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 18em;
+  right: 3.125em;
+}
+
+#root .header .nav-right .search-form .search-box {
+  background-color: white;
+  padding: 4px 28px 4px 28px;
+  float: left;
+  border: 1px solid;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+#root .header .nav-right .search-form .search-box i {
+  margin-right: 1.5rem;
+  font-size: 32px;
+  color: black;
+}
+
+#root .header .nav-right .search-form .search-box .search-text {
+  border: none;
+  outline: none;
+}
+
+#root .header .background-list .more {
+  display: flex;
+}
+
+#root .header .background-list .more ul,
+#root .header .background-list .more li {
+  font-size: 3rem;
+  list-style: disc;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#root .header .background-list .more .current {
+  color: rgba(255, 255, 255, 1);
+}
+
+#root .header .logo {
+  position: absolute;
+  left: 3.125em;
+  bottom: 21em;
+}
+
+#root .header .logo img {
+  max-width: 38.75em;
+  height: 16.25em;
+}
+
+#root .header .logo h2 {
+  color: white;
+  margin-bottom: 1.5em;
+}
+
+#root .header .logo .btn {
+  font-size: 18px;
+  padding: 0.75em 1.5em 0.75em 1.5em;
+  background-color: white;
+  color: black;
+}
+
+#root .container-wrap {
+  padding-top: 2.5em;
+}
+
+#root .container-wrap .container {
+  padding: 0px 3.125em;
+  padding-bottom: 9.125em;
+}
+
+#root .container-wrap .container .item-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+}
+
+#root .container-wrap .container .item-wrap .item {
+  margin: 6px 6px 6px 0px;
+  border: 1px;
+  width: 20.6em;
+  min-height: 10.125em;
+}
+
+#root .container-wrap .container .item-wrap .item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25em;
+}
+
+#root .container-wrap .container .item-wrap .item .title {
+  font-size: 1.125em;
+  line-height: 1.5em;
+  letter-spacing: -0.05em;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-weight: 700;
+}
+
+#root .footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: rgb(47, 49, 66);
+}
+
+#root .footer .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 3.125rem;
+  padding-right: 3.125rem;
+  align-items: center;
+}
+
+#root .footer .info li {
+  float: left;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+#root .footer .info i {
+  font-size: 32px;
+}
+
+#root .footer .info ul {
+  display: flex;
+  align-items: center;
+}
+
+#root .footer .info .info-left .logo {
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+@media (max-width: 480px) {
+  #root .header .logo {
+    position: absolute;
+    left: 1.5em;
+    bottom: 3.375em;
+  }
+
+  #root .header .logo img {
+    max-width: 18em;
+    height: 7.5625em;
+  }
+
+  #root .header .logo h2 {
+    font-size: 14px;
+  }
+
+  #root .header .logo .btn {
+    display: none;
+  }
+
+  #root .header .background-list {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 12em;
+    right: 3.125em;
+  }
+}

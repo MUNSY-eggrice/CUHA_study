@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/stylesheets/email.css">
+    <title>회원가입 / 로그인 - 라프텔</title>
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="form-wrap">
+                <a href="/" class="logo">LAFTEL</a>
+                <form action="" class="login-form">
+                    <div class="info">이메일로 로그인</div>
+                    <div class="label">이메일</div>
+                    <div class="input"><input type="email" class="email"></div>
+                    <div class="label">비밀번호</div>
+                    <div class="input"><input type="password" class="password"></div>
+                    <input type="submit" class="loginBtn" value="로그인" disabled>  
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            const email = document.querySelector('.email');
+            const password = document.querySelector('.password');
+            const loginBtn = document.querySelector('.loginBtn');
+            
+            const inputHandler = function(e) {
+                if (email.value && password.value) {
+                    loginBtn.disabled = false;
+                    joinBtn.style.cursor = 'pointer';
+                    loginBtn.style.backgroundColor = "rgb(129, 107, 255)";
+                } else {
+                    loginBtn.disabled = true;
+                    joinBtn.style.cursor = 'default';
+                    loginBtn.style.backgroundColor = "rgb(226, 226, 226)";
+                }
+            }
+
+            email.addEventListener('input', inputHandler);
+            password.addEventListener('input', inputHandler);
+    </script>
+</body>
+</html>

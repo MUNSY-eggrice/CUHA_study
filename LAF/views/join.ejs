@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/stylesheets/join.css">
+    <title>회원가입 / 로그인 - 라프텔</title>
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="form-wrap">
+                <a href="/" class="logo">LAFTEL</a>
+                <form action="" class="join-form">
+                    <div class="info">회원가입</div>
+                    <div class="label">이메일</div>
+                    <div class="input"><input type="email" class="email"></div>
+                    <div class="label">비밀번호</div>
+                    <div class="input"><input type="password" class="password"></div>
+                    <div class="label">비밀번호 확인</div>
+                    <div class="input"><input type="password" class="password-re"></div>
+                    <input type="submit" class="joinBtn" value="회원가입" disabled>  
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            const email = document.querySelector('.email');
+            const password = document.querySelector('.password');
+            const passwordRe = document.querySelector('.password-re');
+            const joinBtn = document.querySelector('.joinBtn');
+
+            const inputHandler = function(e) {
+                if (email.value && password.value && passwordRe.value) {
+                    joinBtn.disabled = false;
+                    joinBtn.style.cursor = 'pointer';
+                    joinBtn.style.backgroundColor = "rgb(129, 107, 255)";
+                } else {
+                    joinBtn.disabled = true;
+                    joinBtn.style.cursor = 'default';
+                    joinBtn.style.backgroundColor = "rgb(226, 226, 226)";
+                }
+            }
+
+            email.addEventListener('input', inputHandler);
+            password.addEventListener('input', inputHandler);
+            passwordRe.addEventListener('input', inputHandler);
+
+    </script>
+</body>
+</html>
