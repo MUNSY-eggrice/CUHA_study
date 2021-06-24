@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-list</title>
+</head>
+<body>
+    <table border="1">
+    <th>To-Do-list</th>
+    <%for(let i = 0; i < List.length; i++){%>
+        <tr>
+            <td><%= List[i].content %></td>
+        </tr>
+    <% } %>
+    </table>
+    <form action="/create" method="POST">
+        <input type="text" name="content">
+        <input type="submit" value="새 일 작성">
+    </form>
+    
+</body>
+</html>
