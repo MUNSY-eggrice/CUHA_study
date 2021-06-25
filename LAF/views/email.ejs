@@ -12,12 +12,12 @@
         <div class="container">
             <div class="form-wrap">
                 <a href="/" class="logo">LAFTEL</a>
-                <form action="" class="login-form">
+                <form action="/auth/login" class="login-form" method="POST">
                     <div class="info">이메일로 로그인</div>
                     <div class="label">이메일</div>
-                    <div class="input"><input type="email" class="email"></div>
+                    <div class="input"><input type="email" class="email" name="email"></div>
                     <div class="label">비밀번호</div>
-                    <div class="input"><input type="password" class="password"></div>
+                    <div class="input"><input type="password" class="password" name="password"></div>
                     <input type="submit" class="loginBtn" value="로그인" disabled>  
                 </form>
             </div>
@@ -32,11 +32,11 @@
             const inputHandler = function(e) {
                 if (email.value && password.value) {
                     loginBtn.disabled = false;
-                    joinBtn.style.cursor = 'pointer';
+                    loginBtn.style.cursor = 'pointer';
                     loginBtn.style.backgroundColor = "rgb(129, 107, 255)";
                 } else {
                     loginBtn.disabled = true;
-                    joinBtn.style.cursor = 'default';
+                    loginBtn.style.cursor = 'default';
                     loginBtn.style.backgroundColor = "rgb(226, 226, 226)";
                 }
             }

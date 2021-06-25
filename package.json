@@ -1,0 +1,26 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "note.js project",
+  "main": "Crwal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MUNSY-eggrice/CUHA_study.git"
+  },
+  "keywords": [
+    "note.js"
+  ],
+  "author": "Eggrice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MUNSY-eggrice/CUHA_study/issues"
+  },
+  "homepage": "https://github.com/MUNSY-eggrice/CUHA_study#readme",
+  "dependencies": {
+    "puppeteer": "^10.0.0",
+    "request": "^2.88.2"
+  }
+}

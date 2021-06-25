@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\대학수업들\\html5"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\..\\MyGitRepository"
+		},
+		{
+			"path": "..\\..\\대학수업들"
+		},
+		{
+			"path": "D:\\Scenario"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "CODING"
+	}
+}

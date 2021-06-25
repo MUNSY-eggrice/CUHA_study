@@ -104,7 +104,7 @@ const posts = [{title:"HI",content:"hello"},
                 {title:"GOod",content:"ok"}];
 
 app.get("/board", (req,res) => {
-    res.render('board',{posts: posts});//ejs생략가능, set에서 설정을 했기때문 {} 객체형식으로 넘겨줄수 있다.
+    res.render('board',{posts: posts});//ejs생략가능, set에서 설정을 했기때문,   자료를 {} 객체형식으로 넘겨줄수 있다. 생략가능.
 });
 
 app.get("/create", (req,res) => {

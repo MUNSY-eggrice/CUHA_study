@@ -30,7 +30,11 @@
                         </div>
                     </form>
                     <ul>
+                        <% if(user){ %>
+                        <li><a href="/auth/logout">로그아웃</a></li>
+                        <% } else {%>
                         <li><a href="/login">로그인/가입</a></li>
+                        <% }%>
                     </ul>
                 </div>
             </div>
