@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/stylesheets/thumbnail.css">
+    <title>업로드 / 로그인 - 라프텔</title>
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="form-wrap">
+                <a href="/" class="logo">LAFTEL</a>
+                <form action="/thumbnail" class="thumbnail-form" method="POST" enctype="multipart/form-data">
+                    <div class="info">썸네일 추가</div>
+                    <div class="label">제목</div>
+                    <div class="input"><input type="text" class="title" name ="title"></div>
+                    <div class="label">태그</div>
+                    <div class="input"><input type="text" class="tag" name="tag"></div>
+                    <div class="label">요일</div>
+                    <div class="input">
+                        <select name="day" class="day">
+                            <option value="">방영 요일을 선택하세요!</option>
+                            <option value="monday">월요일</option>
+                            <option value="tuesday">화요일</option>
+                            <option value="wednesday">수요일</option>
+                            <option value="thursday">목요일</option>
+                            <option value="friday">금요일</option>
+                            <option value="saturday">토요일</option>
+                            <option value="sunday">일요일</option>
+                        </select>
+                    </div>
+                    <div class="label">썸네일</div>
+                    <div class="input"><input type="file" class="thumbnail" name="thumbnail"></div>
+                    <input type="submit" class="uploadBtn" value="업로드" disabled>  
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            const title = document.querySelector('.title');
+            const tag = document.querySelector('.tag');
+            const day = document.querySelector('.day');
+            const thumbnail = document.querySelector('.thumbnail');
+            const uploadBtn = document.querySelector('.uploadBtn');
+
+            const inputHandler = function(e) {
+                if (title.value && tag.value && day.value && thumbnail.value) {
+                    uploadBtn.disabled = false;
+                    uploadBtn.style.cursor = 'pointer';
+                    uploadBtn.style.backgroundColor = "rgb(129, 107, 255)";
+                } else {
+                    uploadBtn.disabled = true;
+                    uploadBtn.style.cursor = 'default';
+                    uploadBtn.style.backgroundColor = "rgb(226, 226, 226)";
+                }
+            }
+
+            title.addEventListener('input', inputHandler);
+            tag.addEventListener('input', inputHandler);
+            day.addEventListener('change', inputHandler);
+            thumbnail.addEventListener('input', inputHandler);
+    </script>
+</body>
+</html>

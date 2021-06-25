@@ -1,3 +1,9 @@
+
+
+
+
+
+
 const getMain = (req,res) => {
     res.render("index");
 };
@@ -14,11 +20,32 @@ const getEmail = (req,res) => {
     res.render("email");
 };
 
+const getDaily = (req,res) => {
+    res.render("daily");
+};
+
+const getItem = (req,res)=>{
+    res.render("item");
+};
+
+const getThumbnail = (req,res)=>{
+    res.render("thumbnail");
+};
+
+const postThumbnail = (req,res)=>{
+    const {title, tag, day, thumbnail} = req.body;
+    console.log(req.body);
+    res.redirect("/");
+};
 module.exports = {
     getMain,
     getLogin,
     getJoin,
     getEmail,
+    getDaily,
+    getItem,
+    getThumbnail,
+    postThumbnail
 };
 
 /*function abc(){

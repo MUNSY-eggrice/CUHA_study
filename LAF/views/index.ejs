@@ -10,34 +10,7 @@
 </head>
 <body>
     <div id="root">
-        <div class="header">
-            <div class="nav">
-                <div class="nav-left">
-                    <div class="laftel"><a href="/">LAFTEL</a></div>
-                    <ul>
-                        <li><a href="#">태그검색</a></li>
-                        <li><a href="#">요일별 신작</a></li>
-                        <li><a href="#">테마 추천</a></li>
-                        <li><a href="#">멤버십</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-right">
-                    <form action="#" class="search-form" method="GET">
-                        <div class="search-box">
-                            <i class="fas fa-search"></i>
-                            <input type="text" class="search-text">
-                        </div>
-                    </form>
-                    <ul>
-                        <% if(user){ %>
-                        <li><a href="/auth/logout">로그아웃</a></li>
-                        <% } else {%>
-                        <li><a href="/login">로그인/가입</a></li>
-                        <% }%>
-                    </ul>
-                </div>
-            </div>
+        <%- include('header.ejs') -%>
 
             <div class="logo">
                 <img src="./public/images/heroaca_logo_210531.png">

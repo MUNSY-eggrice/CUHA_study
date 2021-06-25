@@ -1,0 +1,76 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  background: rgb(250, 250, 250);
+}
+
+#root .container .form-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#root .container .form-wrap .logo {
+  font-size: 2.5rem;
+  color: rgb(129, 107, 255);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+#root .container .form-wrap .thumbnail-form {
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  border: 1px solid rgb(238, 238, 238);
+  width: 386px;
+  border-radius: 0.25rem;
+}
+
+#root .container .form-wrap .thumbnail-form .info {
+  color: rgb(18, 18, 18);
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#root .container .form-wrap .thumbnail-form .label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: rgb(80, 80, 80);
+}
+
+#root .container .form-wrap .thumbnail-form .input {
+  display: flex;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  margin-bottom: 1.5rem;
+}
+
+#root .container .form-wrap .thumbnail-form .title,
+#root .container .form-wrap .thumbnail-form .tag {
+  border: none;
+  outline: 0px;
+  width: 100%;
+}
+
+#root .container .form-wrap .thumbnail-form .uploadBtn {
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 3rem;
+  background: rgb(226, 226, 226);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+}

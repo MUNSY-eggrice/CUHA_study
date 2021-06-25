@@ -10,31 +10,9 @@
 </head>
 <body>
     <div id="root">
-        <div class="header">
-            <div class="nav">
-                <div class="nav-left">
-                    <div class="laftel"><a href="index.html">LAFTEL</a></div>
-                    <ul>
-                        <li><a href="#">태그검색</a></li>
-                        <li><a href="daily.html">요일별 신작</a></li>
-                        <li><a href="#">테마 추천</a></li>
-                        <li><a href="#">멤버십</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-right">
-                    <form action="#" class="search-form" method="GET">
-                        <div class="search-box">
-                            <i class="fas fa-search"></i>
-                            <input type="text" class="search-text">
-                        </div>
-                    </form>
-                    <ul>
-                        <li><a href="login.html">로그인/가입</a></li>
-                    </ul>
-                </div>
-            </div>
+        <%- include('header') -%>
         </div>
+
         <div class="container-wrap">
             <div class="container">
                 <div class="day-list">
@@ -64,14 +42,7 @@
                 <div class="item-list">
                     <!-- 월요일 -->
                     <div class="item-column">
-                        <a href="item.html">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
-                        <a href="#">
+                        <a href="/item">
                             <div class="item">
                                 <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
                                 <div class="title">도쿄 리벤저스</div>
@@ -81,106 +52,25 @@
                     </div>
                     <!-- 화요일 -->
                     <div class="item-column">
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
                     </div>
                     <!-- 수요일 -->
                     <div class="item-column">
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
                     </div>
                     <!-- 목요일 -->
                     <div class="item-column">
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
                     </div>
                     <!-- 금요일 -->
                     <div class="item-column">
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
                     </div>
-                     <!-- 토요일 -->
-                     <div class="item-column">
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
-                    </div> 
+                    <!-- 토요일 -->
+                    <div class="item-column">
+                    </div>
                     <!-- 일요일 -->
                     <div class="item-column">
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
                     </div>
+                </div>
+                <div class="upload">
+                    <a class="uploadBtn" href="/thumbnail">썸네일 업로드</a>
                 </div>
             </div>
         </div>
