@@ -8,7 +8,7 @@ const passport = require("passport");
 
 const passportConfig = require("./passport");
 const {sequelize} = require("./models"); //index는 생략가능
-const indexRouter = require('./routes/index'); //라우팅 , ./(현재 디렉토리), ../(상위 디렉토라) .../은 없다. ../../를 사용한다.
+const indexRouter = require('./routes/index'); //라우팅 , ./(현재 디렉토리), ../(상위 디렉토리) .../은 없다. ../../를 사용한다.
 const authRouter = require('./routes/auth');
 
 const app = express();

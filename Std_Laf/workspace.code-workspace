@@ -14,6 +14,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "frontend"
+		"liveServer.settings.multiRootWorkspaceName": "frontend",
+		"editor.fontFamily": "Consolas, 'D2Coding','Courier New', monospace"
 	}
 }
