@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/stylesheets/ani.css">
+    <title>업로드 / 로그인 - 라프텔</title>
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="form-wrap">
+                <a href="/" class="logo">LAFTEL</a>
+                <form action="/ani/<%- id %>" class="ani-form" method="POST" enctype="multipart/form-data">
+                    <div class="info">애니메이션 추가</div>
+                    <div class="label">제목</div>
+                    <div class="input"><input type="text" class="title" name ="title"></div>
+                    <div class="label">영상</div>
+                    <div class="input"><input type="file" class="ani" name="video"></div>
+                    <div class="label">자막</div>
+                    <div class="input"><input type="file" class="subtitle" name="subtitle"></div>
+                    <div class="label">썸네일</div>
+                    <div class="input"><input type="file" class="thumbnail" name="thumbnail"></div>
+                    <input type="submit" class="uploadBtn" value="업로드" disabled>  
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            const title = document.querySelector('.title');
+            const ani = document.querySelector('.ani');
+            const thumbnail = document.querySelector('.thumbnail');
+            const uploadBtn = document.querySelector('.uploadBtn');
+
+            const inputHandler = function(e) {
+                if (title.value && ani.value && thumbnail.value) {
+                    uploadBtn.disabled = false;
+                    uploadBtn.style.cursor = 'pointer';
+                    uploadBtn.style.backgroundColor = "rgb(129, 107, 255)";
+                } else {
+                    uploadBtn.disabled = true;
+                    uploadBtn.style.cursor = 'default';
+                    uploadBtn.style.backgroundColor = "rgb(226, 226, 226)";
+                }
+            }
+
+            title.addEventListener('input', inputHandler);
+            ani.addEventListener('input', inputHandler);
+            thumbnail.addEventListener('input', inputHandler);
+    </script>
+</body>
+</html>

@@ -328,3 +328,143 @@ Js Grammer Note
 
           do while 문은 조건이 truthy가 아니라도 한번은 본문을 수행합니다. 대다수의 상황에서 while문을 사용합니다.
           
+          for반복문
+          for(begin; condition; step){
+            //body
+          }
+            begin: 반복문에 진입시 한번 실행
+            condition: 반복마다 해당 조건이 확인된다. false면 동작정지
+            body: condition 이 truthy일 동안 계속 실행
+            step: 각 반복의 body실행 후 실행
+
+          구성요소 생략가능
+          let i=0; //선언과 할당 완료.
+          for(; i<3;){
+            alert(i++);
+          }
+
+          for(;;) //무한반복
+
+          break로 반복문 탈출 가능.
+          continue로 다음 반복으로 넘어가기 가능. continue는 중첩을 줄이는 데 도움을 준다. (중첩은 {}를 계속 열어 깊이가 깊어지는것으로 추정)
+
+          ?(삼항연산자) 오른쪽에는 break와 continue가 올 수 없다.
+
+          break/continue와 레이블
+            여러개의 중첩을 한 번에 빠져나올시 사용.
+
+            양식
+            labelName: for(...){
+              ...
+            }
+
+            사용
+            outer: for(let i=0; i<3; i++){
+              for(let j=0; j<3; j++){
+                break outer; // outer이라는 레이블이 붙은 반복문을 찾고 빠져나온다.
+              }
+            }
+
+            엔터로 별도의 줄에도 사용할 수 있다.
+            outer:
+            for(...){...}
+
+            break와 continue는 반복문 안에서만 사용할 수 있고, 레이블은 반드시 break와 continue지시자 위에 있어야 한다.
+
+        12.switch문
+          복수의 if문은 switch문으로 변환할 수 있다.
+          문법
+            switch(x){
+              case 'value1':
+              ...
+              break;
+
+              case 'value2':
+              ...
+              break;
+              default:
+              alert("값을 모름");
+            }
+
+            케이스의 value값과 일치하는지 절차대로 탐색하고 맞다면 그 case를 실행, 어떤 case도 없다면 default의 구문을 실행.
+
+            case안에 break가 없다면 조건에 부합하는지 여부를 따지지 않고 이어지는 case문을 실행
+            
+              case 3:
+                hi
+              case 4:
+                hello
+              case 5:
+                good
+              default: bye 
+              //hello->good->bye
+
+            switch/case의 인수에는 어떤 표현식도 올 수 있다.
+            let a='1';
+            let b=0;
+            switch (+a){
+              case b+1:
+                alert('hi');
+                break;
+            }
+
+            case문 묶기
+              
+              case 3:
+              case 5:
+                alert("byr");
+                break;
+
+              3과 5일 경우 실행되는 케이스입니다.
+
+            비교하려는 값과 case문의 값의 형이 같아야 실행됩니다. 자료형을 맞춰야합니다.
+
+          13.함수
+            함수 선언
+            function show(){
+              ...
+            }
+            show();
+
+            함수에선 외부변수에 접근, 수정할 수 있습니다.
+            지역변수가 외부변수와 이름이 동일하다면 지역변수만 사용합니다.
+
+            매개변수를 사용하면 데이터가 매개변수에 복사됩니다.
+
+            값을 전달하지 않으면 undefined가 됩니다
+
+            기본값 설정을 해두면 undefined가 발생하지 않습니다.
+
+            function show(from, text="default value"){
+              ...
+            }
+
+            또는 함수 안에 if, ||, ?? 같은것을 사용하는 방법도 있습니다.
+
+            함수를 호출했을 때 함수를 호출한 그곳에 특정 값을 반환하게 할 수 있습니다. 
+            return구문을 사용합니다.
+
+            return만 사용하는 경우 함수가 즉시 종료됩니다.
+
+          14. 함수 표현식
+            자바스크립트에선 함수를 특별한 종류의 값으로 취급합니다. 구조로 취급되지 않습니다.
+
+            함수를 선언하면 다음과 같습니다.
+            function sayHi(){
+              alert("hello");
+            }
+
+            함수 표현식을 사용하면 다음과 같습니다.
+            let sayHi = function(){
+              alert("hello");
+            };
+
+            변수에 함수가 할당되었습니다.
+
+            함수는 값으로 취급받기 때문에 
+
+            let func = sayHi;
+            와 같이 ()를 붙이지 않으면 함수의 코드가 복사됩니다.
+            따라서 func();은 sayHi();와 같은 기능을 합니다.
+
+            

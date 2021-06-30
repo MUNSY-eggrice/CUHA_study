@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/stylesheets/item.css">
+    <link rel="stylesheet" href="/public/stylesheets/item.css">
     <title>라프텔</title>
 </head>
 <body>
@@ -17,80 +17,36 @@
             <div class="head-wrap">
                 <div class="item-head">
                     <div class="thumbnail">
-                        <img src="public/images/45558a4b-6309-44b9-b843-32705d0ce59a.jpg">
+                        <img src="/public/uploads/<%- post.img %>">
                     </div>
                     <div class="info">
-                        <div class="title">도쿄 리벤저스</div>
-                        <div class="smallText">액션 / 드라마</div>
+                        <div class="title"><%-post.title%></div>
+                        <div class="smallText"><%-post.tag%></div>
                         <div class="smallText">평균 4.5</div>
+                    </div>
+                    <div class="upload-wrap">
+                        <div class="upload">
+                            <a href="/ani/<%- post.id %>" class="uploadBtn">애니 업로드</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="item-view">
-                <a href="#">
+                <% for(let i = 0; i < videos.length; ++i) { %>
+                <a href="/view/<%- videos[i].id %>">
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="public/images/Thumbnail.0000057.jpg">
+                            <img src="/public/uploads/<%- videos[i].img %>">
                         </div>
 
                         <div class="info">
-                            <div class="title">1화 Reborn</div>
-                            <div class="day">2021.04.12</div>
+                            <div class="title"><%- videos[i].title%></div>
+                            <div class="day"><%- videos[i].createdAt %></div>
                         </div>
                     </div>
                 </a>
-
-                <a href="#">
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="public/images/Thumbnail.0000057.jpg">
-                        </div>
-
-                        <div class="info">
-                            <div class="title">1화 Reborn</div>
-                            <div class="day">2021.04.12</div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="public/images/Thumbnail.0000057.jpg">
-                        </div>
-
-                        <div class="info">
-                            <div class="title">1화 Reborn</div>
-                            <div class="day">2021.04.12</div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="public/images/Thumbnail.0000057.jpg">
-                        </div>
-
-                        <div class="info">
-                            <div class="title">1화 Reborn</div>
-                            <div class="day">2021.04.12</div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="public/images/Thumbnail.0000057.jpg">
-                        </div>
-
-                        <div class="info">
-                            <div class="title">1화 Reborn</div>
-                            <div class="day">2021.04.12</div>
-                        </div>
-                    </div>
-                </a>
+                <%}%>
+                
             </div>
         </div>
     </div>

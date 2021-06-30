@@ -28,66 +28,30 @@
             <div class="container">
                 <h2>최근 본 작품</h2>
                 <div class="item-wrap">
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
+                    <% for(let i = 0; i < posts.length; ++i) { %>
+                        <a href="/view/<%- posts[i].Video.id %>">
+                            <div class="item">
+                                <div class="thumbnail"><img src="/public/uploads/<%- posts[i].Video.img %>"></div>
+                                <div class="title"><%- posts[i].Video.title %></div>
+                            </div>
+                        </a>
+                    <% } %>
                 </div>
+                
             </div>
 
             <div class="container">
-                <h2>요일별 신작</h2>
+                <h2>신작 TOP5</h2>
                 <div class="item-wrap">
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
-                    <div class="item">
-                        <div class="thumbnail"><img src="public/images/3390a970-59de-4d04-a705-6814d2f2446a.jpg"></div>
-                        <div class="title">4월은 너의 거짓말</div>
-                    </div>
+                    <% for(let i = 0; i < top5_posts.length; ++i){%>
+                    <a href="/item/<%- top5_posts[i].id%>">
+                        <div class="item">
+                            <div class="thumbnail"><img src="/public/uploads/<%- top5_posts[i].img%>" style="width: 290px; height: 415px;"></div>
+                            <div class="title"><%- top5_posts[i].title%></div>
+                        </div>
+                    </a>
+                    <% } %>
                 </div>
-                
             </div>
         </div>
         <div class="footer">

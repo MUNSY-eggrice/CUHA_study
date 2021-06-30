@@ -25,7 +25,7 @@ const upload = multer({
         },
     }),
     
-    limits: {fileSize: 5* 1024 *1024},
+    limits: {fileSize: 5* 1024 *1024 *1024},
 });
 
 router.use((req,res,next)=>{
@@ -38,9 +38,16 @@ router.get("/login",isNotLoggedIn, controller.getLogin);
 router.get("/join", isNotLoggedIn,controller.getJoin);
 router.get("/email", isNotLoggedIn,controller.getEmail);
 router.get("/daily", controller.getDaily);
-router.get("/item",controller.getItem);;
-router.get("/thumbnail",controller.getThumbnail);
+router.get("/item/:id",controller.getItem);;
+router.get("/thumbnail", isLoggedIn ,controller.getThumbnail);
+router.get("/ani/:id", isLoggedIn,controller.getAni);
+router.get("/view/:id", isLoggedIn,controller.getView);
 
-router.post("/thumbnail",upload.single("thumbnail"),controller.postThumbnail);
+router.post("/thumbnail",isLoggedIn,upload.single("thumbnail"),controller.postThumbnail);
+router.post("/ani/:id",isLoggedIn,upload.fields([
+    {name: "video", maxCount:1},
+    {name: "subtitle", maxCount:1},
+    {name: "thumbnail", maxCount:1},
+]),controller.postAni);
 
 module.exports = router; // 외부로 내보냄

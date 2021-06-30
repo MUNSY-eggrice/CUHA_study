@@ -39,35 +39,34 @@
                     </div>
                 </div>
 
+                
                 <div class="item-list">
                     <!-- 월요일 -->
+                   
+                    <% for(let i = 0, currentj=0, current = 'monday'; i< 7; ++i){%>
                     <div class="item-column">
-                        <a href="/item">
-                            <div class="item">
-                                <div class="thumbnail"><img src="public/images/4777870e-159c-42fc-8755-ac69c0a67eea.jpg"></div>
-                                <div class="title">도쿄 리벤저스</div>
-                                <div class="tag">드라마 / 액션</div>
-                            </div>
-                        </a>
+                        <% for(let j=currentj; j < posts.length; ++j) { %>
+                          <% if(posts[j].day === current){ %>
+                         <a href="/item/<%- posts[j].id %>">
+                             <div class="item">
+                                    <div class="thumbnail"><img src="public/uploads/<%- posts[j].img %>"></div>
+                                    <div class="title"><%- posts[j].title %></div>
+                                    <div class="tag"><%- posts[j].tag %></div>
+                             </div>
+                          </a>
+                          <% if(j=== posts.length - 1) {%>
+                            <% currentj = posts.length; %>
+                            <% }%>
+                           <%}else{%>
+                            <% current = posts[j].day; %>
+                            <%currentj = j; %>
+                            <% break; %>
+                            <%}%>
+                        <%}%>
                     </div>
-                    <!-- 화요일 -->
-                    <div class="item-column">
-                    </div>
-                    <!-- 수요일 -->
-                    <div class="item-column">
-                    </div>
-                    <!-- 목요일 -->
-                    <div class="item-column">
-                    </div>
-                    <!-- 금요일 -->
-                    <div class="item-column">
-                    </div>
-                    <!-- 토요일 -->
-                    <div class="item-column">
-                    </div>
-                    <!-- 일요일 -->
-                    <div class="item-column">
-                    </div>
+                     <%}%>
+                  
+                    
                 </div>
                 <div class="upload">
                     <a class="uploadBtn" href="/thumbnail">썸네일 업로드</a>

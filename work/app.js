@@ -1,15 +1,30 @@
 const express = require("express");
-const path = require("path");
 const ejs = require("ejs");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
+const path = require("path");
+const cookieParser = require("cookie-parser");// 
+const session = require("express-session");//
 const dotenv = require("dotenv");
-const app = express();
+const passport = require("passport");
 
+const passportConfig = require("./passport");
+const {sequelize} = require("./models"); //index는 생략가능
+const indexRouter = require('./routes/index'); //라우팅 , ./(현재 디렉토리), ../(상위 디렉토리) .../은 없다. ../../를 사용한다.
+const authRouter = require('./routes/auth');
+
+const app = express();
 app.set("views", path.join(__dirname,"views"));
 app.set("view engine", "ejs");
 
 dotenv.config();
+passportConfig();
+sequelize
+    .sync({force:true})
+    .then(()=>{
+    console.log("데이터베이스 연결 성공");
+    })
+    .catch((err)=>{
+    console.error(err);
+    });
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -23,21 +38,11 @@ app.use(session({
         secure: false,
     },
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get("/", (req,res)=>{
-    res.render("todo",{List});
-});
 
-const List=[{content:"hi"},
-            {content:"hoho"},
-            {content: "haha"}];
-
-app.post("/create", (req,res)=>{
-    const {content} = req.body;
-    const posts= {content};
-    List.push(posts);
-    res.redirect("/");
-    
-});
+app.use = ("/", indexRouter);
+app.use = ("/auth", authRouter);
 
 app.listen(3000);

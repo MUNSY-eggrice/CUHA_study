@@ -165,3 +165,29 @@ li {
   font-size: 0.875rem;
   line-height: 1.5;
 }
+
+#root .container .head-wrap .item-head .upload-wrap {
+  margin: 0 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+#root .container .head-wrap .item-head .upload-wrap .upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  background-color: rgb(129, 107, 255);
+  border-radius: 4rem;
+  height: 3rem;
+  float: right;
+  cursor: pointer;
+}
+
+#root .container .head-wrap .item-head .upload-wrap .upload .uploadBtn {
+  color: white;
+  font-size: 1.2rem;
+}

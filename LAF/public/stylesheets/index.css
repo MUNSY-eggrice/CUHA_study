@@ -144,20 +144,24 @@ li {
   margin: 0 auto;
 }
 
-#root .container-wrap .container .item-wrap .item {
+#root .container-wrap .container .item-wrap a  {
+	color: black;
+}
+
+#root .container-wrap .container .item-wrap a .item {
   margin: 6px 6px 6px 0px;
   border: 1px;
   width: 20.6em;
   min-height: 10.125em;
 }
 
-#root .container-wrap .container .item-wrap .item img {
+#root .container-wrap .container .item-wrap a .item img {
   width: 100%;
   height: 100%;
   border-radius: 0.25em;
 }
 
-#root .container-wrap .container .item-wrap .item .title {
+#root .container-wrap .container .item-wrap a .item .title {
   font-size: 1.125em;
   line-height: 1.5em;
   letter-spacing: -0.05em;
