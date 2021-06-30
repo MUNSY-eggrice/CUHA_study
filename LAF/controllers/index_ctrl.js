@@ -2,6 +2,8 @@ const Post = require("../models/post");
 const Video = require("../models/video");
 const View = require("../models/view");
 const User = require("../models/user");
+const suquelize = require("sequelize");
+const Op = suquelize.Op;
 
 const getMain = async (req, res) => {
     try {
@@ -12,18 +14,18 @@ const getMain = async (req, res) => {
           where: { email: req.user.email },
         });
   
-        posts = await View.findAll({
-          include: [
-            {
-              model: User,
-            },
-            {
-              model: Video,
-            },
-          ],
-          where: { user_id: user.id },
-          limit: 5,
-        });
+        // posts = await View.findAll({
+        //   include: [
+        //     {
+        //       model: User,
+        //     },
+        //     {
+        //       model: Video,
+        //     },
+        //   ],
+        //   where: { user_id: user.id },
+        //   limit: 5,
+        // });
       }
   
       const top5_posts = await Post.findAll({
@@ -105,6 +107,27 @@ const postThumbnail = async (req,res)=>{
     }
 };
 
+const postUpdate = async (req,res)=>{
+    const id = req.params.id;
+    const {title, tag, day, thumbnail} = req.body;
+    try{
+        await Post.update({
+            title,
+            day,
+            tag,
+            img:req.file.filename,
+            
+        },{
+            where: {id},
+        });
+        return res.redirect('/');
+    }catch(error){
+        console.error(error);
+    }
+};
+
+
+
 const postAni = async (req,res)=>{
     const id = req.params.id;
     const {title,} = req.body;
@@ -153,6 +176,48 @@ const getView = async (req,res)=>{
         console.error(error);
     }
 };
+
+const getUpdate = async (req,res)=>{
+    const id = req.params.id;
+
+    try{
+        const post = await Post.findOne({
+            where:{id}
+        });
+        return res.render("update", {post});
+    }catch(error){
+        console.error(error);
+    }
+    
+};
+
+const deleteThumbnail = async (req,res)=>{
+    const id = req.params.id;
+
+    try{
+        await Post.destroy({where:{id}});
+        await Video.destroy({where:{post_id : id}});
+        await View.destroy({where : {post_id:id}});
+        res.send(
+            '<script>alert("삭제가 완료되었습니다."); location.href="/";</script>'
+          );
+    }catch(error){
+        console.error(error);
+    }
+};
+
+const getSearch = async (req, res)=>{
+    const {title} = req.query;
+    try {
+        const posts = await Post.findAll({
+            where:{title:{[Op.like]: "%" + title +"%"}},
+        });
+        return res.render("search", {posts});
+    } catch (error) {
+        console.error(error);
+    }
+};
+
 module.exports = {
     getMain,
     getLogin,
@@ -165,7 +230,10 @@ module.exports = {
     getView,
     postAni,
     postThumbnail,
-    
+    getUpdate,
+    postUpdate,
+    deleteThumbnail,
+    getSearch,
 };
 
 /*function abc(){

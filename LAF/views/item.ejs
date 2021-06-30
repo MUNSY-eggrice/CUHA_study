@@ -24,11 +24,19 @@
                         <div class="smallText"><%-post.tag%></div>
                         <div class="smallText">평균 4.5</div>
                     </div>
-                    <div class="upload-wrap">
+                
+                    <div class="btn-wrap">
                         <div class="upload">
                             <a href="/ani/<%- post.id %>" class="uploadBtn">애니 업로드</a>
                         </div>
+                        <div class="update">
+                            <a href="/update/<%- post.id %>" class="updateBtn">애니 수정</a>
+                        </div>
+                        <div class="delete">
+                            <a href="/delete/<%- post.id %>" class="deleteBtn">애니 삭제</a>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
             <div class="item-view">

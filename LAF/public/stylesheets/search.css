@@ -1,3 +1,4 @@
+@charset "EUC-KR";
 html,
 body {
   margin: 0;
@@ -104,4 +105,8 @@ li {
 #root .container-wrap .container .item-list .item .thumbnail img {
   width: 170px;
   height: 225px;
+}
+
+#root .container-wrap .container .item-list .result_wrap {
+	margin: 0 auto;
 }

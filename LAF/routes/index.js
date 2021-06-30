@@ -42,6 +42,9 @@ router.get("/item/:id",controller.getItem);;
 router.get("/thumbnail", isLoggedIn ,controller.getThumbnail);
 router.get("/ani/:id", isLoggedIn,controller.getAni);
 router.get("/view/:id", isLoggedIn,controller.getView);
+router.get("/update/:id", isLoggedIn, controller.getUpdate);
+router.get("/delete/:id", isLoggedIn, controller.deleteThumbnail);
+router.get("/search", controller.getSearch);
 
 router.post("/thumbnail",isLoggedIn,upload.single("thumbnail"),controller.postThumbnail);
 router.post("/ani/:id",isLoggedIn,upload.fields([
@@ -49,5 +52,7 @@ router.post("/ani/:id",isLoggedIn,upload.fields([
     {name: "subtitle", maxCount:1},
     {name: "thumbnail", maxCount:1},
 ]),controller.postAni);
+
+router.post("/update/:id",isLoggedIn,upload.single("thumbnail"),controller.postUpdate);
 
 module.exports = router; // 외부로 내보냄
