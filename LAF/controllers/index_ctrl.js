@@ -172,7 +172,7 @@ const getView = async (req,res)=>{
         if(view){
             await View.destroy({where:{user_id: user.id, video_id: video.id}});
         }
-        
+
         await View.create({
             user_id: user.id,
             post_id:video.post_id,
@@ -226,6 +226,20 @@ const getSearch = async (req, res)=>{
     }
 };
 
+const getAdmin = async(req, res)=>{
+    try {
+        if(req.user){
+            User.update({type: "admin"}, {where:{email:req.user.email}});
+            return res.send('<script>alert("관리자 권한을 얻었습니다."); location.href="/";</script>');
+        }else{
+            return res.send('<script>alert("로그인이 필요합니다."); location.href="/";</script>');
+        }
+        return res.redirect('/');
+    } catch (error) {
+        console.error(error);
+    }
+};
+
 module.exports = {
     getMain,
     getLogin,
@@ -242,6 +256,7 @@ module.exports = {
     postUpdate,
     deleteThumbnail,
     getSearch,
+    getAdmin,
 };
 
 /*function abc(){

@@ -132,9 +132,11 @@
                         <% } %> 
                     </div>
                 </div>
+                <% if(user && user.type === 'admin') {%>
                 <div class="upload">
                     <a class="uploadBtn" href="/thumbnail">썸네일 업로드</a>
                 </div>
+                <% } %>
             </div>
         </div>
     </div>
