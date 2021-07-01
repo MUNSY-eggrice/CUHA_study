@@ -26,7 +26,7 @@
                             </div>
                         </a>
                         <%} %>
-                    <% if (posts && posts.length === 0) {%>
+                    <% if (Array.isArray(posts) && posts.length === 0) {%>
                         <div class="result_wrap"><h1 class="search_result">검색결과가 없습니다.</h1></div>
                     <%} %>
                 </div>

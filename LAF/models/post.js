@@ -33,5 +33,6 @@ module.exports = class Post extends Sequelize.Model{
     }
     static associate(db){
         db.Post.hasMany(db.Video, { foreignKey: "post_id", sourceKey: "id" });
+        db.Post.hasMany(db.View, { foreignKey: "post_id", sourceKey: "id" });
     }
 };

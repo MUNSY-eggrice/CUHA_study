@@ -14,18 +14,16 @@ const getMain = async (req, res) => {
           where: { email: req.user.email },
         });
   
-        // posts = await View.findAll({
-        //   include: [
-        //     {
-        //       model: User,
-        //     },
-        //     {
-        //       model: Video,
-        //     },
-        //   ],
-        //   where: { user_id: user.id },
-        //   limit: 5,
-        // });
+        posts = await View.findAll({
+          include: [
+            {
+              model: Video,
+            },
+          ],
+          where: { user_id: user.id },
+          limit: 5,
+          order: [["id", "DESC"]],
+        });
       }
   
       const top5_posts = await Post.findAll({
@@ -167,11 +165,21 @@ const getView = async (req,res)=>{
             where:{email: req.user.email},
         });
 
+        const view = await View.findOne({
+           where:{user_id: user.id, video_id: video.id}, 
+        });
+
+        if(view){
+            await View.destroy({where:{user_id: user.id, video_id: video.id}});
+        }
+        
         await View.create({
             user_id: user.id,
+            post_id:video.post_id,
             video_id:id,
             });
-        res.render("view",{video});
+
+        return res.render("view",{video});
     }catch(error){
         console.error(error);
     }
@@ -197,7 +205,7 @@ const deleteThumbnail = async (req,res)=>{
     try{
         await Post.destroy({where:{id}});
         await Video.destroy({where:{post_id : id}});
-        await View.destroy({where : {post_id:id}});
+        await View.destroy({where:{post_id:id}});
         res.send(
             '<script>alert("삭제가 완료되었습니다."); location.href="/";</script>'
           );

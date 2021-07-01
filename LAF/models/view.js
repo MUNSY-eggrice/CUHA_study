@@ -17,6 +17,7 @@ module.exports = class View extends Sequelize.Model{
     }
     static associate(db){
         db.View.belongsTo(db.User, { foreignKey: "user_id", targetKey: "id" });
+        db.View.belongsTo(db.Post, { foreignKey: "post_id", targetKey: "id" });
         db.View.belongsTo(db.Video, { foreignKey: "video_id", targetKey: "id" });
     }
 };
