@@ -39,34 +39,112 @@
                     </div>
                 </div>
 
-                
                 <div class="item-list">
-                    <!-- 월요일 -->
-                   
-                    <% for(let i = 0, currentj=0, current = 'monday'; i< 7; ++i){%>
                     <div class="item-column">
-                        <% for(let j=currentj; j < posts.length; ++j) { %>
-                          <% if(posts[j].day === current){ %>
-                         <a href="/item/<%- posts[j].id %>">
-                             <div class="item">
-                                    <div class="thumbnail"><img src="public/uploads/<%- posts[j].img %>"></div>
-                                    <div class="title"><%- posts[j].title %></div>
-                                    <div class="tag"><%- posts[j].tag %></div>
-                             </div>
-                          </a>
-                          <% if(j=== posts.length - 1) {%>
-                            <% currentj = posts.length; %>
-                            <% }%>
-                           <%}else{%>
-                            <% current = posts[j].day; %>
-                            <%currentj = j; %>
-                            <% break; %>
-                            <%}%>
-                        <%}%>
+                        <% for (let i = 0; i < posts.length; ++i) { %>
+                            <% if (posts[i].day === 'monday') { %>
+                                <a href="/item/<%- posts[i].id %>">
+                                    <div class="item">
+                                        <div class="thumbnail"><img src="public/uploads/<%- posts[i].img %>"></div>
+                                        <div class="title"><%- posts[i].title %></div>
+                                        <div class="tag"><%- posts[i].tag %></div>
+                                    </div>
+                                </a>
+                            <% } else { %>
+                                <% break; %>
+                            <% } %>
+                        <% } %> 
                     </div>
-                     <%}%>
-                  
-                    
+                    <div class="item-column">
+                        <% for (let i = 0; i < posts.length; ++i) { %>
+                            <% if (posts[i].day === 'tuesday') { %>
+                                <a href="/item/<%- posts[i].id %>">
+                                    <div class="item">
+                                        <div class="thumbnail"><img src="public/uploads/<%- posts[i].img %>"></div>
+                                        <div class="title"><%- posts[i].title %></div>
+                                        <div class="tag"><%- posts[i].tag %></div>
+                                    </div>
+                                </a>
+                            <% } else { %>
+                                <% break; %>
+                            <% } %>
+                        <% } %> 
+                    </div>
+                    <div class="item-column">
+                        <% for (let i = 0; i < posts.length; ++i) { %>
+                            <% if (posts[i].day === 'wednesday') { %>
+                                <a href="/item/<%- posts[i].id %>">
+                                    <div class="item">
+                                        <div class="thumbnail"><img src="public/uploads/<%- posts[i].img %>"></div>
+                                        <div class="title"><%- posts[i].title %></div>
+                                        <div class="tag"><%- posts[i].tag %></div>
+                                    </div>
+                                </a>
+                            <% } else { %>
+                                <% break; %>
+                            <% } %>
+                        <% } %> 
+                    </div>
+                    <div class="item-column">
+                        <% for (let i = 0; i < posts.length; ++i) { %>
+                            <% if (posts[i].day === 'thursday') { %>
+                                <a href="/item/<%- posts[i].id %>">
+                                    <div class="item">
+                                        <div class="thumbnail"><img src="public/uploads/<%- posts[i].img %>"></div>
+                                        <div class="title"><%- posts[i].title %></div>
+                                        <div class="tag"><%- posts[i].tag %></div>
+                                    </div>
+                                </a>
+                            <% } else { %>
+                                <% break; %>
+                            <% } %>
+                        <% } %> 
+                    </div>
+                    <div class="item-column">
+                        <% for (let i = 0; i < posts.length; ++i) { %>
+                            <% if (posts[i].day === 'friday') { %>
+                                <a href="/item/<%- posts[i].id %>">
+                                    <div class="item">
+                                        <div class="thumbnail"><img src="public/uploads/<%- posts[i].img %>"></div>
+                                        <div class="title"><%- posts[i].title %></div>
+                                        <div class="tag"><%- posts[i].tag %></div>
+                                    </div>
+                                </a>
+                            <% } else { %>
+                                <% break; %>
+                            <% } %>
+                        <% } %> 
+                    </div>
+                    <div class="item-column">
+                        <% for (let i = 0; i < posts.length; ++i) { %>
+                            <% if (posts[i].day === 'saturday') { %>
+                                <a href="/item/<%- posts[i].id %>">
+                                    <div class="item">
+                                        <div class="thumbnail"><img src="public/uploads/<%- posts[i].img %>"></div>
+                                        <div class="title"><%- posts[i].title %></div>
+                                        <div class="tag"><%- posts[i].tag %></div>
+                                    </div>
+                                </a>
+                            <% } else { %>
+                                <% break; %>
+                            <% } %>
+                        <% } %> 
+                    </div>
+                    <div class="item-column">
+                        <% for (let i = 0; i < posts.length; ++i) { %>
+                            <% if (posts[i].day === 'sunday') { %>
+                                <a href="/item/<%- posts[i].id %>">
+                                    <div class="item">
+                                        <div class="thumbnail"><img src="public/uploads/<%- posts[i].img %>"></div>
+                                        <div class="title"><%- posts[i].title %></div>
+                                        <div class="tag"><%- posts[i].tag %></div>
+                                    </div>
+                                </a>
+                            <% } else { %>
+                                <% break; %>
+                            <% } %>
+                        <% } %> 
+                    </div>
                 </div>
                 <div class="upload">
                     <a class="uploadBtn" href="/thumbnail">썸네일 업로드</a>
