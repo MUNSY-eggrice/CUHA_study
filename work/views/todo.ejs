@@ -7,37 +7,39 @@
     <title>To-Do-list</title>
 </head>
 <body>
-    <table border="1">
-    <th>To-Do-list</th>
-    <!-- <%for(let i = 0; i < list.length; i++){%>
-        <tr>
-            <td><%= list[i].content %></td>
-        </tr>
-    <% } %> -->
-    </table>
-    <form action="/create" method="POST">
-        <input type="text" name="content">
-        <input type="submit" value="새 일 작성">
-    </form>
-
+    
+            
     <% if(user){ %>
-            <form action="/logout" method="POST">
-                <button type="submit" value="로그아웃">
+        <table border="1">
+            <th>To-Do-list</th>
+                <%for(let i = 0; i < list.length; i++){%>
+                    <tr>
+                        <td><%= list[i].content %></td>
+                    </tr>
+                <% } %>
+            </table>
+                
+            <form action="/create" method="POST">
+                <input type="text" name="content">
+                <input type="submit" value="새 일 작성">
+            </form>
+            <form action="/auth/logout" method="GET">
+                <input type="submit" value="로그아웃">
             </form>
         <% } else {%>
-            <form action="/login" method="POST">
-                <input type="text" name="id" placeholder="Id">
-                <input type="password" name="password" placeholder="Id">
+            <form action="/auth/login" method="POST">
+                <input type="text" name="name" placeholder="Id">
+                <input type="password" name="password" placeholder="password">
+                <input type="submit" value="로그인">
             </form>
-        <% }%>
-    <form action="/join" method="POST">
-        <input type="text" name="id" placeholder="Id">
-        <input type="password" name="password" placeholder="Id">
-    </form>
 
-    <form action="" method="POST">
-        <input type="text"  name="id">
-    </form>
+            <form action="/auth/join" method="POST">
+                <input type="text" name="name" placeholder="Id">
+                <input type="password" name="password" placeholder="password">
+                <input type="submit" value="가입">
+            </form>
+         <% }%>
+
     
 </body>
 </html>

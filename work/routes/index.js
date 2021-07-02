@@ -12,5 +12,7 @@ router.use((req,res,next)=>{
 
 router.get("/", controller.getMain);
 
+router.post("/create", controller.postList);
+
 
 module.exports = router; // 외부로 내보냄

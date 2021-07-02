@@ -3,7 +3,7 @@ const Sequelize = require("sequelize");
 module.exports = class User extends Sequelize.Model {
   static init(sequelize) {
     return super.init({
-        id: {
+        name:{
             type: Sequelize.STRING(20),
             allowNull: false,
             unique: true
@@ -26,6 +26,6 @@ module.exports = class User extends Sequelize.Model {
   }
 
   static associate(db) {
-    
+    db.User.hasMany(db.List, { foreignKey: "user_id", sourceKey: "id" });
   }
 };

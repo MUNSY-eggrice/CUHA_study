@@ -19,6 +19,6 @@ module.exports = class List extends Sequelize.Model{
         });
     }
     static associate(db){
-        
+        db.List.belongsTo(db.User, { foreignKey: "user_id", targetKey: "id" });
     }
 };

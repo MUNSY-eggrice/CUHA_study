@@ -8,12 +8,12 @@ module.exports = () => {
   passport.use(
     new LocalStrategy(
       {
-        usernameField: "id",
+        usernameField: "name",
         passwordField: "password",
       },
-      async (is, password, done) => {
+      async (name, password, done) => {
         try {
-          const exUser = await User.findOne({ where: { is } });
+          const exUser = await User.findOne({ where: { name } });
           if (exUser) {
             const result = await bcrypt.compare(password, exUser.password);
             if (result) {

@@ -22,7 +22,7 @@ exports.isLoggedIn = (req, res, next) => {
   exports.isAdminIn = async (req,res,next) => {
     try {
       const user = await User.findOne({
-        where:{email: req.user.email},
+        where:{name: req.user.name},
         });
         if(user.type === 'admin'){
           next();
