@@ -5,13 +5,13 @@ const User = require('../models/user');
 const postJoin = async(req,res,next)=>{
     const {email, password, re_password} = req.body;
     try{
-        const exUser =await User.findOne({where:{email}});
+        const exUser =await User.findOne({where:{id}});
         if(exUser || password !== re_password){
             return res.redirect('/join?error=exist');
         }
         const hash = await bcrypt.hash(password, 12);
         await User.create({
-            email,
+            id,
             password: hash
         });
         return res.redirect("/login");

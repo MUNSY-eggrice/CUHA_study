@@ -3,7 +3,7 @@ const Sequelize = require("sequelize");
 module.exports = class User extends Sequelize.Model {
   static init(sequelize) {
     return super.init({
-        email: {
+        id: {
             type: Sequelize.STRING(20),
             allowNull: false,
             unique: true
@@ -11,11 +11,6 @@ module.exports = class User extends Sequelize.Model {
         password:{
             type: Sequelize.STRING(100),
             allowNull: false
-        },
-        type:{
-            type: Sequelize.ENUM('free','premium','admin'),
-            allowNull: true,
-            defaultValue: "free",
         },
     }, 
     {
@@ -30,5 +25,7 @@ module.exports = class User extends Sequelize.Model {
     });
   }
 
-  static associate(db) {}
+  static associate(db) {
+    
+  }
 };

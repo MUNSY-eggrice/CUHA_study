@@ -1,35 +1,21 @@
-const getMain = (req,res) => {
-    res.render("todo",{List});
-};
-const List=[{content:"hi"},
-            {content:"hoho"},
-            {content: "haha"}];
+const User = require("../models/user");
+const suquelize = require("sequelize");
+const List = require("../models/List");
 
-
-
-app.post("/create", (req,res)=>{
-    const {content} = req.body;
-    const posts= {content};
-    List.push(posts);
-    res.redirect("/");
-    
-});
-
-
-const getLogin = (req,res) => {
-    res.render("login");
-};
-
-const getJoin = (req,res) => {
-    res.render("join");
-};
+const getMain = async (req, res) => {
+    try {
+        // const list = await List.findAll({
+        //     where:{content}
+        // })
+      return res.render("todo");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
 
 module.exports = {
     getMain,
-    getLogin,
-    getJoin,
-
 };
 
 /*function abc(){

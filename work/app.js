@@ -4,12 +4,13 @@ const path = require("path");
 const cookieParser = require("cookie-parser");// 
 const session = require("express-session");//
 const dotenv = require("dotenv");
-const passport = require("passport");
-
+const passport = require('passport');
 const passportConfig = require("./passport");
-const {sequelize} = require("./models"); //index는 생략가능
+
 const indexRouter = require('./routes/index'); //라우팅 , ./(현재 디렉토리), ../(상위 디렉토리) .../은 없다. ../../를 사용한다.
 const authRouter = require('./routes/auth');
+
+const {sequelize} = require("./models");
 
 const app = express();
 app.set("views", path.join(__dirname,"views"));
@@ -17,8 +18,9 @@ app.set("view engine", "ejs");
 
 dotenv.config();
 passportConfig();
+
 sequelize
-    .sync({force:true})
+    .sync({force:false})
     .then(()=>{
     console.log("데이터베이스 연결 성공");
     })
@@ -38,11 +40,11 @@ app.use(session({
         secure: false,
     },
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-app.use = ("/", indexRouter);
-app.use = ("/auth", authRouter);
+app.use("/", indexRouter);
+app.use('/auth', authRouter);
 
 app.listen(3000);
