@@ -20,7 +20,12 @@
   },
   "homepage": "https://github.com/MUNSY-eggrice/CUHA_study#readme",
   "dependencies": {
+    "nodemon": "^2.0.9",
     "puppeteer": "^10.0.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
   }
 }
