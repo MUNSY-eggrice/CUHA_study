@@ -1,0 +1,26 @@
+Express를 이용한 node js 백엔드 작성 순서
+
+1. 메인으로 실행되는 JS는 app.js
+2. 필요한 라이브러리.
+    "bcrypt"        //password의 암호화를 위한 라이브러리. 
+    "cookie-parser" //쿠키
+    "dotenv"
+    "ejs"           //ejs확장자를 쓰기 위한 라이브러리
+    "express"       //node.js로 개발하기 위한 프레임 워크중 네임드
+    "express-session"//세션
+    "multer"        //파일업로드를 위한 라이브러리
+    "mysql2"        //DB를 사용하기 위한 라이브러리
+    "passport"      //계정을 좀더 안전하게 관리하기 위한 라이브러리
+    "passport-local"//passport관련 라이브러리
+    "sequelize"     //DB와 express의 연결을 위한 라이브러리
+    "sequelize-cli" //sequelize관련 라이브러리
+    "session"       //세션
+
+2. express를 사용하는 구조.(sequelize & mysql을 사용할 경우)
+    /public     서버에서 사용할 파일들이 들어가는 폴더
+    /routes     라우터들이 들어가는 폴더
+    /models     DB 테이블(스키마)들을 작성한 폴더
+    /controllers 라우터의 실제 기능들이 들어가 있는 폴더
+    /config     DB 설정이 들어가 있다
+    /migrations ???
+    /node_modules express를 사용하는 필요한 npm파일들이 들어가 있다. (node package manager)

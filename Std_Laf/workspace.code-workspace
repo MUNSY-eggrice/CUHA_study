@@ -1,23 +1,26 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "..\\..\\frontend"
-		},
-		{
-			"path": "..\\LAF"
-		},
-		{
-			"path": "..\\work"
-		},
-		{
-			"path": "..\\Swagger"
-		}
-	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "frontend",
-		"editor.fontFamily": "Consolas, 'D2Coding','Courier New', monospace"
-	}
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "..\\..\\frontend"
+    },
+    {
+      "path": "..\\LAF"
+    },
+    {
+      "path": "..\\work"
+    },
+    {
+      "path": "..\\Swagger"
+    },
+    {
+      "path": "..\\MongoDB_st"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "frontend",
+    "editor.fontFamily": "Consolas, 'D2Coding','Courier New', monospace"
+  }
 }
