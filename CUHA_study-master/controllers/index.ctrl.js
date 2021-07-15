@@ -13,11 +13,11 @@ const getWargameIndexPage = async (req, res) => {
   try {
     //필터링
     let selectType = req.query.type;
+    console.log(req.query.type);
     selectType = !(selectType === '' || selectType == undefined)
       ? selectType
       : 'all';
     const filter = await Wargame.find({ type: selectType });
-    console.log(filter);
 
     //페이징 구문
     let page = Math.max(1, parseInt(req.query.page));
