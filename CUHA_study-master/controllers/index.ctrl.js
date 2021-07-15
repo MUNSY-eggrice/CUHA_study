@@ -11,7 +11,15 @@ const getWargameCreatePage = (req, res) => {
 //wargame 페이지
 const getWargameIndexPage = async (req, res) => {
   try {
-    let type = req.query.type;
+    //필터링
+    let selectType = req.query.type;
+    selectType = !(selectType === '' || selectType == undefined)
+      ? selectType
+      : 'all';
+    const filter = await Wargame.find({ type: selectType });
+    console.log(filter);
+
+    //페이징 구문
     let page = Math.max(1, parseInt(req.query.page));
     let limit = Math.max(1, parseInt(req.query.limit));
     page = !isNaN(page) ? page : 1;
